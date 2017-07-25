@@ -20,8 +20,13 @@ void LedIndicator::paintEvent(QPaintEvent *) {
 }
 
 void LedIndicator::switchLedIndicator() {
-  lit = ! lit;
-  repaint();
+  toggle();
+}
+void LedIndicator::on() {
+  setState(true);
+}
+void LedIndicator::off() {
+  setState(false);
 }
 void LedIndicator::setState(bool state)
 {
