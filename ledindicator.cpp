@@ -1,6 +1,8 @@
 #include "ledindicator.h"
 #include <QPainter>
 
+namespace nrg_gui_plugins {
+
 LedIndicator::LedIndicator(QWidget *parent) :
     QWidget(parent)
 {
@@ -19,20 +21,20 @@ void LedIndicator::paintEvent(QPaintEvent *) {
   p.drawEllipse(0,0,ledSize,ledSize);
 }
 
-void LedIndicator::switchLedIndicator() {
-  toggle();
-}
 void LedIndicator::on() {
   setState(true);
 }
+
 void LedIndicator::off() {
   setState(false);
 }
+
 void LedIndicator::setState(bool state)
 {
     lit = state;
     repaint();
 }
+
 void LedIndicator::toggle()
 {
     lit = ! lit;
@@ -65,3 +67,5 @@ void LedIndicator::setLedSize(int size)
     setFixedSize(size+10, size+10);
     repaint();
 }
+
+} // namespace nrg_gui_plugins

@@ -11,10 +11,6 @@ class LedIndicator: public QWidget {
   public:
     LedIndicator(QWidget *parent = 0);
     
-    void setState(bool state);
-    
-    void toggle();
-    
     void setOnColor(QColor onColor);
     
     void setOffColor(QColor offColor);
@@ -25,8 +21,10 @@ class LedIndicator: public QWidget {
     
     void setLedSize(int size);
 
-  public slots:
-    void toggleLedIndicator();
+  public Q_SLOTS:
+    void setState(bool state);
+    
+    void toggle();
     
     void on();
     
